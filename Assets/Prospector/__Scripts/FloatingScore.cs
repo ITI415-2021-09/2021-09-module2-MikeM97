@@ -72,13 +72,11 @@ public class FloatingScore : MonoBehaviour
         score += fs.score;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (state == eFSState.idle) return;
@@ -89,8 +87,8 @@ public class FloatingScore : MonoBehaviour
         {
             state = eFSState.pre;
             txt.enabled = false;
-        } else
-        {
+        }
+        else {
             if (u>=1)
             {
                 uC = 1;

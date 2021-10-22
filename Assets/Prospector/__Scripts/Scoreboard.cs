@@ -21,7 +21,8 @@ public class Scoreboard : MonoBehaviour
         get
         {
             return (_score);
-        } set
+        }
+        set
         {
             _score = value;
             scoreString = _score.ToString("N0");
@@ -33,7 +34,8 @@ public class Scoreboard : MonoBehaviour
         get
         {
             return (_scoreString);
-        } set
+        }
+        set
         {
             _scoreString = value;
             GetComponent<Text>().text = _scoreString;

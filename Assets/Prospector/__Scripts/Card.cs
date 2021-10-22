@@ -16,7 +16,8 @@ public class Card : MonoBehaviour {
 	public CardDefinition def;  // from DeckXML.xml		
 	public SpriteRenderer[] spriteRenderers;
 
-	public bool faceUp {
+	public bool faceUp
+	{
 		get {
 			return (!back.activeSelf);
 		}
@@ -31,8 +32,8 @@ public class Card : MonoBehaviour {
 		print(name);
     }
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		SetSortOrder(0);
 	}
 	
@@ -85,7 +86,8 @@ public class Card : MonoBehaviour {
 } // class Card
 
 [System.Serializable]
-public class Decorator{
+public class Decorator
+{
 	public string	type;			// For card pips, tyhpe = "pip"
 	public Vector3	loc;			// location of sprite on the card
 	public bool		flip = false;	//whether to flip vertically
@@ -93,7 +95,8 @@ public class Decorator{
 }
 
 [System.Serializable]
-public class CardDefinition{
+public class CardDefinition
+{
 	public string	face;	//sprite to use for face cart
 	public int		rank;	// value from 1-13 (Ace-King)
 	public List<Decorator>	pips = new List<Decorator>();  // Pips Used

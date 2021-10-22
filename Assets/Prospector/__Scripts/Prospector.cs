@@ -5,7 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class Prospector : MonoBehaviour {
+public class Prospector : MonoBehaviour
+{
 
 	static public Prospector 	S;
 
@@ -32,7 +33,8 @@ public class Prospector : MonoBehaviour {
 	public List<CardProspector> discardPile;
 	public FloatingScore fsRun;
 
-	void Awake(){
+	void Awake()
+	{
 		S = this;
 		SetUpUITexts();
 	}
@@ -299,7 +301,6 @@ public class Prospector : MonoBehaviour {
 			gameOverText.text = "Round Over";
 			roundResultText.text = "You won this round!\nRound Score: " + score;
 			ShowResultsUI(true);
-			// print("Game Over. You won! :)");
 			ScoreManager.EVENT(eScoreEvent.gameWin);
 			FloatingScoreHandler(eScoreEvent.gameWin);
         } else
@@ -314,11 +315,9 @@ public class Prospector : MonoBehaviour {
 				roundResultText.text = "Your final score was: " + score;
             }
 			ShowResultsUI(true);
-			// print("Game Over. You lost. :(");
 			ScoreManager.EVENT(eScoreEvent.gameLoss);
 			FloatingScoreHandler(eScoreEvent.gameLoss);
         }
-		// SceneManager.LoadScene("__Prospector_Scene_0");
 		Invoke("ReloadLevel", reloadDelay);
     }
 	

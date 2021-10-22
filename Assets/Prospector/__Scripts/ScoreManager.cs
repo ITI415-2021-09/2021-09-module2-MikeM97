@@ -33,7 +33,6 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.LogError("ERROR: ScoreManager.Awake(): S is already set!");
         }
-
         if (PlayerPrefs.HasKey ("ProspectorHighScore"))
         {
             HIGH_SCORE = PlayerPrefs.GetInt("ProspectorHighScore");
@@ -41,7 +40,6 @@ public class ScoreManager : MonoBehaviour
         score += SCORE_FROM_PREV_ROUND;
         SCORE_FROM_PREV_ROUND = 0;
     }
-
     static public void EVENT(eScoreEvent evt)
     {
         try
@@ -52,7 +50,6 @@ public class ScoreManager : MonoBehaviour
             Debug.LogError("ScoreManager:EVENT() called while S=null.\n" + nre);
         }
     }
-
     void Event (eScoreEvent evt)
     {
         switch (evt)
@@ -70,7 +67,6 @@ public class ScoreManager : MonoBehaviour
                 scoreRun += chain;
                 break;
         }
-
         switch (evt)
         {
             case eScoreEvent.gameWin:
@@ -100,13 +96,11 @@ public class ScoreManager : MonoBehaviour
     static public int SCORE { get { return S.score; } }
     static public int SCORE_RUN { get { return S.scoreRun; } }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
